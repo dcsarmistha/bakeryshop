@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Bootstrap CSS -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <!--header section-->
+ <!-- Header Section -->
+<!-- Header Section -->
+<header class="px-5 py-4" style="background-color: #f7c9d0;">
+  <div class="d-flex justify-content-between align-items-center flex-wrap">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="images/Darlings cake shop (1).png" alt="Bakery Logo" style="max-width: 150px; height: auto;">
+    </div>
+    <!-- Center Title and Subtitle -->
+    <div class="text-center flex-grow-1">
+      <h1 class="m-0 fw-bold text-dark display-5">Darlings Cake Shop</h1>
+      <hr class="mx-auto" style="width: 200px;">
+      <h2 class="fs-5 text-muted">Your sweet treats await!!!</h2>
+    </div>
+
+    <!-- Search, Social & Login/Signup -->
+    <div class="d-flex align-items-center gap-3">
+      <!-- Search -->
+      <form role="search">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search" style="background-color: white; color: black; border-radius: 20px;">
+      </form>
+
+      <!-- Social Media Icons -->
+      <div class="d-flex gap-2">
+        <a href="#"><i class="bi bi-facebook fs-5 text-primary"></i></a>
+        <a href="#"><i class="bi bi-instagram fs-5 text-danger"></i></a>
+        <a href="#"><i class="bi bi-whatsapp fs-5 text-success"></i></a>
+      </div>
+
+      <!-- Buttons -->
+      <div>
+        <button class="btn btn-warning" onclick="showForm('login')">Login</button>
+        <button class="btn btn-warning" onclick="showForm('signup')">Signup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden Form Section -->
+  <div id="formSection" style="display: none;">
+    <div class="form-container text-center mt-3" id="formContent"></div>
+  </div>
+
+  <script>
+    function showForm(type) {
+      const section = document.getElementById('formSection');
+      const content = document.getElementById('formContent');
+      section.style.display = 'block';
+
+      if (type === 'login') {
+        content.innerHTML = `
+          <h2>Welcome Back! 🍰</h2>
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address:</label>
+              <input type="email" class="form-control" id="email" placeholder="Please enter your phone or email" required>
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Please enter your password" required>
+            </div>
+            <p>Don't have an account? <a href="#">Signup</a></p>
+            <p>Or, login with</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#"><i class="bi bi-facebook text-primary"></i> Facebook</a>
+              <a href="#"><i class="bi bi-instagram text-danger"></i> Instagram</a>
+            </div>
+            <button type="submit" class="btn btn-login mt-3">Login</button>
+          </form>
+        `;
+      } else {
+        content.innerHTML = `
+          <h2>Create Account 🎉</h2>
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address:</label>
+              <input type="email" class="form-control" id="email" placeholder="Please enter your phone or email" required>
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Please enter your password" required>
+            </div>
+            <p>Already have an account? <a href="#">Login</a></p>
+            <p>Or, signup with</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#"><i class="bi bi-facebook text-primary"></i> Facebook</a>
+              <a href="#"><i class="bi bi-instagram text-danger"></i> Instagram</a>
+            </div>
+            <button type="submit" class="btn btn-login mt-3">Sign up</button>
+          </form>
+        `;
+      }
+    }
+  </script>
+</header>
+
+
+<!-- Hidden Form Section -->
+<div id="formSection" style="display: none;" class="text-center mt-4">
+  <div class="form-container" id="formContent">
+    <!-- Form content will be injected here -->
+  </div>
+</div>
+
+<!-- Script for Dynamic Forms -->
+<script>
+  function showForm(type) {
+    const section = document.getElementById('formSection');
+    const content = document.getElementById('formContent');
+    section.style.display = 'block';
+
+    if (type === 'login') {
+      content.innerHTML = `
+        <h2>Welcome Back! 🍰</h2>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address:</label>
+            <input type="email" class="form-control" id="email" placeholder="Please enter your phone or email" required>
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Please enter your password" required>
+          </div>
+          <p>Don't have an account? <a href="#">Signup</a></p>
+          <p>Or, login with</p>
+          <div class="d-flex gap-2 justify-content-center">
+            <a href="#" target="_blank"><i class="bi bi-facebook fs-5 text-primary"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-instagram fs-5 text-danger"></i></a>
+          </div>
+          <button type="submit" class="btn btn-login mt-3">Login</button>
+        </form>`;
+    } else if (type === 'signup') {
+      content.innerHTML = `
+        <h2>Create Account 🎉</h2>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address:</label>
+            <input type="email" class="form-control" id="email" placeholder="Please enter your phone or email" required>
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Please enter your password" required>
+          </div>
+          <p>Already have an account? <a href="#">Login</a></p>
+          <p>Or, signup with</p>
+          <div class="d-flex gap-2 justify-content-center">
+            <a href="#" target="_blank"><i class="bi bi-facebook fs-5 text-primary"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-instagram fs-5 text-danger"></i></a>
+          </div>
+          <button type="submit" class="btn btn-login mt-3">Sign up</button>
+        </form>`;
+    }
+  }
+</script>
+
+   <!-- Sidebar and Carousel Section -->
+<div class="d-flex" style="height: 100vh;">
+  <!-- Sidebar -->
+  <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; background-color: #fff8b0; height: 100vh; border-right: 2px solid #f1d36f;">
+  
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item border-bottom">
+        <a href="#" class="nav-link text-dark py-2">Home</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a href="#" class="nav-link text-dark py-2">Features</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a href="#" class="nav-link text-dark py-2">Pricing</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a href="#" class="nav-link text-dark py-2">About</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a href="#" class="nav-link text-dark py-2">FAQs</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a href="#" class="nav-link text-dark py-2">Contact Us</a>
+      </li>
+    </ul>
+    <hr class="mt-auto border-dark">
+    <p class="text-center small text-muted">© 2025 Darlings</p>
+  </div>
+  
+
+  <!-- Image Slider -->
+  <div class="flex-grow-1">
+    <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <img src="images/hayley-maxwell-lmKo7gQO3nk-unsplash.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Cake">
+        </div>
+        <div class="carousel-item h-100">
+          <img src="images/karina-kungla-q1E_VIgSSIo-unsplash.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Bakery">
+        </div>
+        <div class="carousel-item h-100">
+          <img src="images/naghme-kn-Gurpb1HITBg-unsplash.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Bread">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!--features-->
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 text-center">
+
+        <!-- Anniversary Special -->
+        <div class="col">
+          <div class="offer-card bg-light">
+            <img src="offers/anniversaryycake.jpg" alt="Anniversary Special" class="offer-img">
+            <div class="p-4">
+              <h3 class="fs-2 text-body-emphasis">Anniversary Special</h3>
+              <p>Celebrate love with our elegant anniversary collection—crafted to make your moments unforgettable.</p>
+              <br>
+              <a href="#" class="btn btn-outline-danger overlay-button">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Valentine Special -->
+        <div class="col">
+          <div class="offer-card bg-light">
+            <img src="offers/valentinecake.jpg" alt="Valentine Special" class="offer-img">
+            <div class="p-4">
+              <h3 class="fs-2 text-body-emphasis">Valentine Special</h3>
+              <p>Sweet surprises for your sweetheart—handpicked goodies wrapped in love and charm!</p>
+              <br>
+              <a href="#" class="btn btn-outline-danger overlay-button" data-bs-toggle="modal" data-bs-target="#valentineModal">Add to Cart</a>
+<!-- Valentine Modal -->
+<div class="modal fade" id="valentineModal" tabindex="-1" aria-labelledby="valentineModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="add_to_cart.php" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="valentineModalLabel">Valentine Special</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="offer" value="Valentine Special">
+
+          <label for="flavour" class="form-label">Choose Flavour:</label>
+          <select name="flavour" class="form-select">
+            <option value="Chocolate">Chocolate</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Strawberry">Strawberry</option>
+          </select>
+
+          <label for="quantity" class="form-label mt-3">Quantity:</label>
+          <input type="number" name="quantity" class="form-control" min="1" value="1">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger">Add to Cart</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      
+        <!-- Birthday Special -->
+        <div class="col">
+          <div class="offer-card bg-light">
+            <img src="offers/birthdaycake.jpg" alt="Birthday Special" class="offer-img">
+            <div class="p-4">
+              <h3 class="fs-2 text-body-emphasis">Birthday Special</h3>
+              <p>Make birthdays more magical with our joyful treats and dazzling delights 🎂🎉</p>
+              <br>
+              <a href="#" class="btn btn-outline-danger overlay-button">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <!-- Bootstrap JS (required for modal) -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
