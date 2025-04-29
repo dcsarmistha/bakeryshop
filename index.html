@@ -8,99 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --primary-color: #f7c9d0;
-            --secondary-color: #fff8b0;
-            --accent-color: #f1d36f;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        .header-bg {
-            background-color: var(--primary-color);
-        }
-        
-        .sidebar-bg {
-            background-color: var(--secondary-color);
-            border-right: 2px solid var(--accent-color);
-        }
-        
-        .offer-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .offer-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .offer-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .carousel-item img {
-            object-fit: cover;
-        }
-        
-        .btn-login {
-            background-color: #ffc107;
-            border: none;
-            padding: 8px 25px;
-            font-weight: 500;
-        }
-        
-        .btn-login:hover {
-            background-color: #e0a800;
-        }
-        
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .overlay-button {
-            transition: all 0.3s ease;
-        }
-        
-        .overlay-button:hover {
-            background-color: #dc3545;
-            color: white !important;
-        }
-        
-        @media (max-width: 992px) {
-            .d-flex.flex-wrap {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .header-bg .d-flex > div {
-                margin-bottom: 15px;
-                width: 100%;
-            }
-            
-            .sidebar-bg {
-                width: 100% !important;
-                height: auto !important;
-            }
-            
-            .d-flex.flex-row {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css"
 </head>
 <body>
     <!-- Header Section -->
@@ -286,7 +194,7 @@
     <div class="modal fade" id="anniversaryModal" tabindex="-1" aria-labelledby="anniversaryModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="add_to_cart.php" method="POST">
+                <form action="addto_cart.php" method="POST">
                     <div class="modal-header">
                         <h5 class="modal-title" id="anniversaryModalLabel">Anniversary Special</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -330,7 +238,7 @@
     <div class="modal fade" id="valentineModal" tabindex="-1" aria-labelledby="valentineModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="add_to_cart.php" method="POST">
+                <form action="" method="POST">
                     <div class="modal-header">
                         <h5 class="modal-title" id="valentineModalLabel">Valentine Special</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -515,7 +423,7 @@
         </div>
     </div>
 </div>
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top bg-yellow">
       <div class="col mb-3">
         <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" aria-label="Bootstrap">
           <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
@@ -571,90 +479,7 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    
-    <script>
-        function showForm(type) {
-            const section = document.getElementById('formSection');
-            const content = document.getElementById('formContent');
-            
-            // Toggle visibility
-            if (section.style.display === 'block' && content.innerHTML.includes(type)) {
-                section.style.display = 'none';
-                return;
-            }
-            
-            section.style.display = 'block';
-
-            if (type === 'login') {
-                content.innerHTML = `
-                    <h2 class="mb-4">Welcome Back! 🍰</h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email address:</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password:</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Remember me</label>
-                        </div>
-                        <p class="mb-3">Don't have an account? <a href="#" onclick="showForm('signup')">Signup</a></p>
-                        <p class="text-muted">Or, login with</p>
-                        <div class="d-flex justify-content-center gap-3 mb-4">
-                            <a href="#" class="btn btn-outline-primary"><i class="bi bi-facebook me-2"></i>Facebook</a>
-                            <a href="#" class="btn btn-outline-danger"><i class="bi bi-google me-2"></i>Google</a>
-                        </div>
-                        <button type="submit" class="btn btn-login w-100">Login</button>
-                    </form>
-                `;
-            } else {
-                content.innerHTML = `
-                    <h2 class="mb-4">Create Account 🎉</h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="signupName" class="form-label">Full Name:</label>
-                            <input type="text" class="form-control" id="signupName" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupEmail" class="form-label">Email address:</label>
-                            <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupPassword" class="form-label">Password:</label>
-                            <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="signupConfirmPassword" class="form-label">Confirm Password:</label>
-                            <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm your password" required>
-                        </div>
-                        <p class="mb-3">Already have an account? <a href="#" onclick="showForm('login')">Login</a></p>
-                        <p class="text-muted">Or, signup with</p>
-                        <div class="d-flex justify-content-center gap-3 mb-4">
-                            <a href="#" class="btn btn-outline-primary"><i class="bi bi-facebook me-2"></i>Facebook</a>
-                            <a href="#" class="btn btn-outline-danger"><i class="bi bi-google me-2"></i>Google</a>
-                        </div>
-                        <button type="submit" class="btn btn-login w-100">Sign up</button>
-                    </form>
-                `;
-            }
-            
-            // Scroll to form for better UX
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Close form when clicking outside
-        document.addEventListener('click', function(event) {
-            const formSection = document.getElementById('formSection');
-            if (formSection.style.display === 'block' && 
-                !formSection.contains(event.target) && 
-                event.target.className !== 'btn btn-warning me-2' && 
-                event.target.className !== 'btn btn-warning') {
-                formSection.style.display = 'none';
-            }
-        });
-    </script>
+    <script src="index.js"></script>
+  
 </body>
 </html>
